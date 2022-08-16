@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "title": "Notes 1",
+        "body": "This is note 1",
+        "archived": false
+    },
+    {
+        "id": "2",
+        "title": "Notes 2",
+        "body": "This is note 2",
+        "archived": true
+    },
+    {
+        "id": "3",
+        "title": "Notes 3",
+        "body": "This is note 3",
+        "archived": true
+    },
+    {
+        "id": "4",
+        "title": "Notes 4",
+        "body": "This is note 4",
+        "archived": false
+    },
+    {
+        "id": "5",
+        "title": "Notes 5",
+        "body": "This is note 5",
+        "archived": false
+    },
+    {
+        "id": "6",
+        "title": "Notes 6",
+        "body": "This is note 6",
+        "archived": true
+    },
+    {
+        "id": "7",
+        "title": "Notes 7",
+        "body": "This is note 7",
+        "archived": false
+    }
+]
