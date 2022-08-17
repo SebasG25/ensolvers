@@ -12,12 +12,14 @@ export const Modal = ({ noteInfo, open, onClose }) => {
   const onPositiveButtonClick = (e) => {
     e.preventDefault();
     console.log('positive button clicked');
+    setNote({})
     onClose()
   }
 
   const onCancelButtonClick = (e) => {
     e.preventDefault();
     console.log('onCancelButtonClick')
+    setNote({})
     onClose()
   }
 
