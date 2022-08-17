@@ -1,0 +1,128 @@
+.modal__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.modal__container {
+    max-width: 600px;
+    width: 100%;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+}
+
+.modal__input_container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.modal__input_container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#000;
+	transition: all 0.5s ease-in-out;
+}
+
+.modal__input_container input:focus ~ label,
+.modal__input_container input:valid ~ label,
+.modal__input_container textarea:valid ~ label,
+.modal__input_container textarea:focus ~ label {
+	top:-12px;
+	font-size:12px;
+}
+
+.modal__input_container input, .modal__input_container textarea {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #000;
+}
+
+.modal__input_container input:focus, .modal__input_container textarea:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #0096FF;
+}
+
+.modal__right {
+    width: 100%;
+}
+
+.modal__closebtn {
+    position: fixed;
+    top: -10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+}
+
+.modal__form_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal__text {
+    resize: none;
+    overflow: scroll;
+}
+
+.modal__btn_container {
+    display: flex;
+    padding: 1rem 1rem;
+}
+
+.modal__btn_container button {
+    width: 100%;
+    margin: .5rem;
+    padding: 16px 0;
+    border: none;
+    color: #fff;
+}
+
+.modal__btn_primary {
+    background-color: #0096FF;
+}
+
+.modal__btn_outline {
+    background-color: #A2B5BB;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.bold, button {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .modal__container {
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: 100vh;
+    }
+}

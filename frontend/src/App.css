@@ -1,3 +1,7 @@
+.App__container {
+  margin: 0 auto;
+}
+
 .App__title {
   text-align: center;
   font-weight: 600;
@@ -8,10 +12,23 @@
   position: relative;
 }
 
-.App__archived_title {
+.App__create_note_button, .App__archived_title {
   position: absolute;
   top: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.App__archived_title {
   right: 1em;
   text-decoration: underline;
-  cursor: pointer;
+}
+
+.App__create_note_button {
+  left: 1em;
+  z-index: 1;
+}
+
+.App__create_note_button:hover, .App__archived_title:hover {
+  transform: scale(1.10);
 }

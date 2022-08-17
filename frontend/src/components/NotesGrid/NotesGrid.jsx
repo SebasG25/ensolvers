@@ -3,7 +3,7 @@ import { NoteCard } from '../NoteCard/NoteCard';
 import Notes from '../../utils/notes.json';
 import './NotesGrid.css'
 
-export const NotesGrid = ({isArchivedActive}) => {
+export const NotesGrid = ({ setNoteInfo, isArchivedActive, setShowModal }) => {
     const [notes, setNotes] = useState(Notes);
 
     useEffect(() => {
@@ -13,7 +13,14 @@ export const NotesGrid = ({isArchivedActive}) => {
     return (
         <ul className="notesGrid__container">
             {notes.map(note => (
-                <NoteCard id={note.id} title={note.title} body={note.body} />
+                <NoteCard
+                    setNoteInfo={setNoteInfo}
+                    setShowModal={setShowModal}
+                    key={note.id} id={note.id}
+                    title={note.title}
+                    body={note.body}
+                    archived={note.archived}
+                />
             ))}
         </ul>
     )
