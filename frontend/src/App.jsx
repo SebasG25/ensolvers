@@ -6,7 +6,10 @@ import './App.css';
 
 export const App = () => {
   const [showModal, setShowModal] = useState(false);
-  const [noteInfo, setNoteInfo] = useState({});
+  const [noteInfo, setNoteInfo] = useState({
+    title:'',
+    body:''
+  });
   const [isArchivedActive, setIsArchivedActive] = useState(false);
 
   const onIconClick = () => {

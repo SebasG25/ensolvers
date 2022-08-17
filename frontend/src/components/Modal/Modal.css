@@ -56,6 +56,10 @@
     border-bottom: 1px solid #0096FF;
 }
 
+.modal__input_container textarea {
+    overflow: auto;
+}
+
 .modal__right {
     width: 100%;
 }

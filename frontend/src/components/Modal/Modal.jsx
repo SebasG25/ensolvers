@@ -3,7 +3,10 @@ import { useState } from 'react';
 import './Modal.css'
 
 export const Modal = ({ noteInfo, open, onClose }) => {
-  const [note, setNote] = useState({});
+  const [note, setNote] = useState({
+    title:'',
+    body:''
+  });
 
   useEffect(() => {
     setNote(noteInfo);
@@ -12,20 +15,27 @@ export const Modal = ({ noteInfo, open, onClose }) => {
   const onPositiveButtonClick = (e) => {
     e.preventDefault();
     console.log('positive button clicked');
-    setNote({})
+    setNote({
+      title:'',
+      body:''
+    })
     onClose()
   }
 
   const onCancelButtonClick = (e) => {
     e.preventDefault();
     console.log('onCancelButtonClick')
-    setNote({})
+    setNote({
+      title:'',
+      body:''
+    })
     onClose()
   }
 
   const handleChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value })
   }
+
 
   if (!open) return null
 
@@ -40,11 +50,11 @@ export const Modal = ({ noteInfo, open, onClose }) => {
             <form className='modal__form' action="">
               <div className="modal__form_content">
                 <div className="modal__input_container">
-                  <input name='title' type="text" className="modal__title" value={note?.title} onChange={handleChange} />
+                  <input name='title' type="text" className="modal__title" value={note.title} onChange={handleChange} />
                   <label>Title</label>
                 </div>
                 <div className="modal__input_container">
-                  <textarea name='body' className="modal__text" value={note?.body} onChange={handleChange} />
+                  <textarea name='body' className="modal__text" value={note.body} onChange={handleChange} />
                   <label>Write your note here</label>
                 </div>
               </div>

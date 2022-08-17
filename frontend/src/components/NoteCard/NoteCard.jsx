@@ -9,7 +9,7 @@ export const NoteCard = ({ setNoteInfo, setShowModal, id, archived, title, body 
     return (
         <div className='noteCard__card' onClick={() => {
             setShowModal(true)
-            setNoteInfo({ id, title, body})
+            setNoteInfo({ id, title, body })
         }}>
             <h3 className='noteCard__card_title'>{title}</h3>
             <p className='noteCard__card_text'>{body}</p>
