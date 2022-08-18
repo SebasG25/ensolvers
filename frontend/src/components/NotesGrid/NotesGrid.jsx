@@ -1,22 +1,38 @@
 import { useState, useEffect } from 'react'
 import { NoteCard } from '../NoteCard/NoteCard';
-import Notes from '../../utils/notes.json';
+import { getNotes } from '../../utils/getNotes';
+import { Spinner } from '../Spinner/Spinner';
 import './NotesGrid.css'
 
 export const NotesGrid = ({ setNoteInfo, isArchivedActive, setShowModal }) => {
-    const [notes, setNotes] = useState(Notes);
+    const [notes, setNotes] = useState();
+    const [filteredNotes, setFilteredNotes] = useState();
+    const [isLoading, setIsLoading] = useState(true)
+
 
     useEffect(() => {
-        setNotes(Notes.filter(note => note.archived === isArchivedActive));
-    }, [isArchivedActive])
+        const fetchNotes = async () => {
+            setIsLoading(true)
+            const arrayOfNotes = await getNotes()
+            setNotes(arrayOfNotes)
+            const filtered = arrayOfNotes.filter(note => note.archived === isArchivedActive)
+            setFilteredNotes(filtered)
+            setIsLoading(false)
+        }
+        fetchNotes()
+    } , [isArchivedActive])
+    
+    if (isLoading) {
+        return <Spinner />;
+    }
 
     return (
         <ul className="notesGrid__container">
-            {notes.map(note => (
+            {filteredNotes.map(note => (
                 <NoteCard
                     setNoteInfo={setNoteInfo}
                     setShowModal={setShowModal}
-                    key={note.id} id={note.id}
+                    key={note._id} id={note._id}
                     title={note.title}
                     body={note.body}
                     archived={note.archived}
