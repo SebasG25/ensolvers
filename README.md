@@ -7,12 +7,10 @@
 ## Comandos para iniciar la app:
 ###  Frontend:
 ```bash
-cd /prueba-tecnica-ensolvers/frontend/
-npm start
+npm run start-front
 ```
 
 ### Backend: 
 ```bash
-cd /prueba-tecnica-ensolvers/backend/
-npm start
+npm run start-back
 ```
