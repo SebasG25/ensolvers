@@ -29,7 +29,7 @@
 }
 
 .noteCard__icon_container {
-    grid-row: 4;
+    grid-row: 5;
     display: flex;
     justify-content: space-between;
 }
@@ -41,4 +41,16 @@
 
 .noteCard__icon:hover {
     transform: scale(1.10);
+}
+
+.noteCard__text {
+    height: 100%;
+}
+
+.noteCard__date {
+    grid-row: 4;
+}
+
+.noteCard__date p {
+    font-size: 13px;
 }
