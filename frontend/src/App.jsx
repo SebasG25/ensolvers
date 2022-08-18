@@ -5,6 +5,8 @@ import { getNotes } from './utils/getNotes';
 import { Modal } from './components/Modal/Modal';
 import './App.css';
 import { Spinner } from './components/Spinner/Spinner';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -43,6 +45,13 @@ export const App = () => {
           {isArchivedActive ? '< Go back to unarchived notes' : 'Archived notes'}
         </p>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        closeOnClick
+        draggable
+        pauseOnHover
+      />
       {
         !isLoading
           ? <NotesGrid
