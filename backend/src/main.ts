@@ -13,7 +13,7 @@ async function bootstrap() {
     }),
   );
   app.enableCors();
-  await app.listen(process.env.PORT || 18162);
+  await app.listen(`0.0.0.0:${process.env.PORT}`);
   logger.log(`Server running on ${await app.getUrl()}`);
 }
 bootstrap();
