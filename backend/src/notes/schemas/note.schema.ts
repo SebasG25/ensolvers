@@ -5,10 +5,10 @@ export type NoteDocument = Note & Document;
 
 @Schema()
 export class Note {
-  @Prop()
+  @Prop({ default: 'Default title', trim: true })
   title: string;
 
-  @Prop()
+  @Prop({ default: 'Default content', trim: true })
   body: string;
 
   @Prop({ default: false })
