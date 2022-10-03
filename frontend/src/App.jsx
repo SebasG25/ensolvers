@@ -17,6 +17,14 @@ export const App = () => {
   const [notes, setNotes] = useState();
 
   useEffect(() => {
+    const fetch = async () => {
+      setIsLoading(true)
+      const arrayOfNotes = await getNotes()
+      setNotes(arrayOfNotes)
+      const filtered = arrayOfNotes.filter(note => note.archived === isArchivedActive)
+      setFilteredNotes(filtered)
+      setIsLoading(false)
+    }
     fetch()
   }, [isArchivedActive])
 
@@ -39,7 +47,7 @@ export const App = () => {
       <Modal fetch={fetch} noteInfo={noteInfo} open={showModal} onClose={() => setShowModal(false)} />
       <div className='App__header_container'>
         <MdAddCircleOutline onClick={onIconClick} className='App__create_note_button' size={35} />
-        <h1 className='App__title'>My notes</h1>
+        <h1 className='App__title'>{!isArchivedActive ? 'My notes' : 'My archived notes'}</h1>
         <p className='App__archived_title'
           onClick={() => setIsArchivedActive(!isArchivedActive)}>
           {isArchivedActive ? '< Go back to unarchived notes' : 'Archived notes'}

@@ -1,3 +1,3 @@
 export const getApi = () => {
-    return 'https://ensolvers-backend-production.up.railway.app/api'
+    return 'http://[::1]:3001/api'
 }

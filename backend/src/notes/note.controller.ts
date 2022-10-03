@@ -15,6 +15,11 @@ export class NotesController {
     return this.notesService.getNotes();
   }
 
+  @Get(':id')
+  async getNote(@Param('id') id: string) {
+    return this.notesService.getNote(id);
+  }
+
   @Put(':id')
   async updateNote(@Body() noteDto, @Param('id') id: string) {
     return this.notesService.updateNote(id, noteDto);
